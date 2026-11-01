@@ -1,104 +1,175 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Знайомства для українців за кордоном</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <style>
-        body {
-            font-family: system-ui, -apple-system, sans-serif;
-        }
-        .hero-bg {
-            background: linear-gradient(135deg, #1e2937 0%, #0f172a 100%);
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FlirtUA — знайомства для українців за кордоном</title>
+<meta name="description" content="Знайомства й дружба для українців в Іспанії, Польщі, Німеччині, Чехії та Італії. Українською, просто в Telegram, безкоштовно.">
+<meta property="og:title" content="FlirtUA — наші поруч">
+<meta property="og:description" content="Знайомства й дружба для українців за кордоном. Українською, просто в Telegram.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Unbounded:wght@600;800&display=swap" rel="stylesheet">
+<style>
+:root { --night:#0E1E45; --deep:#172B5C; --deep2:#20376E; --gold:#F3C443; --gold-ink:#1A2340; --red:#E2394B; --linen:#F5EEE2; --hint:#A7B3CF; --line:rgba(245,238,226,.12);
+  --display:"Unbounded","Onest",system-ui,sans-serif; --body:"Onest",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { margin:0; background:radial-gradient(120% 50% at 50% -10%,#1B3375 0%,var(--night) 60%) var(--night); color:var(--linen); font:17px/1.55 var(--body); -webkit-font-smoothing:antialiased; }
+a { color:inherit; }
+.orn { height:16px; background:var(--stitch) repeat-x center / auto 16px; }
+.wrap { max-width:1080px; margin:0 auto; padding:0 20px; }
+nav { display:flex; align-items:center; justify-content:space-between; padding:18px 0; }
+.brand { font:800 22px/1 var(--display); display:flex; align-items:center; gap:8px; letter-spacing:-.02em; }
+.brand i { width:24px; height:24px; background:var(--heart) center/contain no-repeat; }
+.brand b { color:var(--gold); }
+.cta { display:inline-flex; align-items:center; gap:10px; background:var(--gold); color:var(--gold-ink); font-weight:700; text-decoration:none; padding:15px 26px; border-radius:16px; font-size:17px; box-shadow:0 12px 30px rgba(243,196,67,.25); }
+.cta:hover { filter:brightness(1.05); }
+.cta.sm { padding:10px 16px; font-size:15px; box-shadow:none; }
+.cta svg { width:22px; height:22px; }
+.hero { display:grid; grid-template-columns:1.05fr .95fr; gap:40px; align-items:center; padding:30px 0 60px; }
+.hero h1 { font:800 clamp(44px,7vw,84px)/.95 var(--display); letter-spacing:-.04em; margin:0 0 18px; }
+.hero p { font-size:19px; color:var(--hint); max-width:34ch; margin:0 0 26px; }
+.flags { display:flex; flex-wrap:wrap; gap:8px; margin:22px 0 0; padding:0; list-style:none; }
+.flags li { display:inline-flex; align-items:center; gap:8px; background:var(--deep); padding:7px 12px 7px 8px; border-radius:999px; font-size:14px; font-weight:600; }
+.flag { width:22px; height:15px; border-radius:3px; box-shadow:inset 0 0 0 1px rgba(255,255,255,.18); }
+.ua { background:linear-gradient(#0057B7 50%,#FFD500 50%); } .es { background:linear-gradient(#AA151B 25%,#F1BF00 25% 75%,#AA151B 75%); }
+.pl { background:linear-gradient(#F5F5F5 50%,#DC143C 50%); } .de { background:linear-gradient(#111 33.3%,#DD0000 33.3% 66.6%,#FFCE00 66.6%); }
+.it { background:linear-gradient(90deg,#009246 33.3%,#F4F5F0 33.3% 66.6%,#CE2B37 66.6%); }
+.cz { background:linear-gradient(to bottom right,#11457E 50%,transparent 50.5%) top left/50% 50% no-repeat,linear-gradient(to top right,#11457E 50%,transparent 50.5%) bottom left/50% 50% no-repeat,linear-gradient(#F5F5F5 50%,#D7141A 50%); }
+.couple { width:100%; height:auto; display:block; border-radius:32px; box-shadow:0 30px 70px rgba(3,10,30,.55); }
+.note { font-size:14px; color:var(--hint); margin-top:12px; }
+h2 { font:800 clamp(30px,4.6vw,52px)/1.05 var(--display); letter-spacing:-.03em; margin:0 0 10px; }
+.sub { color:var(--hint); margin:0 0 30px; max-width:52ch; }
+.reasons { padding:40px 0 30px; }
+.groups { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+.grp { background:var(--deep); border-radius:26px; padding:22px 20px 10px; }
+.grp h3 { font:700 19px/1.2 var(--display); margin:0 0 12px; display:flex; align-items:center; gap:10px; color:var(--gold); }
+.grp ul { list-style:none; margin:0; padding:0; counter-reset:none; }
+.grp li { display:grid; grid-template-columns:44px 1fr; gap:12px; padding:12px 0; border-top:1px solid var(--line); }
+.grp li:first-child { border-top:0; }
+.grp li i { width:44px; height:44px; border-radius:14px; display:grid; place-items:center; font-style:normal; font-size:22px; background:rgba(243,196,67,.12); }
+.grp li b { display:block; }
+.grp li span { color:var(--hint); font-size:15px; }
+.final { text-align:center; padding:70px 0 80px; }
+.final p { color:var(--hint); margin:0 auto 26px; max-width:46ch; }
+footer { text-align:center; color:var(--hint); font-size:14px; padding:24px 0 34px; border-top:1px solid var(--line); }
+@media (max-width:860px) { .hero { grid-template-columns:1fr; gap:28px; padding-top:10px; } .hero .art { order:-1; } .groups { grid-template-columns:1fr; } }
+@media (prefers-reduced-motion:no-preference) {
+  .hero h1, .hero p, .hero .cta, .flags { animation:rise .7s cubic-bezier(.2,.8,.2,1) both; }
+  .hero p { animation-delay:.08s; } .hero .cta { animation-delay:.16s; } .flags { animation-delay:.24s; }
+  .orn.top { animation:stitch 1.2s steps(20) both; }
+  .couple .float-heart path { animation:hf 3.2s ease-in-out infinite; transform-box:fill-box; transform-origin:center; }
+  .couple .stars circle, .couple .win rect { animation:tw 2.8s ease-in-out infinite; }
+  .couple .stars circle:nth-child(2n), .couple .win rect:nth-child(2n) { animation-delay:1.2s; }
+  .couple .rib1, .couple .rib2 { animation:sw 2.4s ease-in-out infinite; transform-box:fill-box; transform-origin:top center; }
+  @keyframes rise { from { opacity:0; transform:translateY(18px); } }
+  @keyframes stitch { from { clip-path:inset(0 100% 0 0); } to { clip-path:inset(0 0 0 0); } }
+  @keyframes hf { 50% { transform:translateY(-8px) scale(1.1); } }
+  @keyframes tw { 50% { opacity:.25; } }
+  @keyframes sw { 50% { transform:rotate(7deg); } }
+}
+</style>
 </head>
-<body class="bg-slate-950 text-white">
-    <!-- Hero Section -->
-    <div class="hero-bg min-h-screen flex items-center">
-        <div class="max-w-5xl mx-auto px-6 py-16 text-center">
-            <div class="flex justify-center mb-6">
-                <div class="bg-slate-800 px-4 py-1.5 rounded-full text-sm flex items-center gap-2">
-                    <i class="fa-solid fa-globe text-emerald-400"></i>
-                    <span>Для українців у Європі</span>
-                </div>
-            </div>
-           
-            <h1 class="text-5xl md:text-6xl font-bold tracking-tight mb-6">
-                Знайомства для<br>українців за кордоном
-            </h1>
-           
-            <p class="max-w-2xl mx-auto text-xl text-slate-300 mb-10">
-                Простий і зручний бот, створений спеціально для нашої спільноти
-                в Іспанії, Польщі, Німеччині, Чехії та Італії.
-            </p>
-            <!-- Головна кнопка -->
-            <a href="https://t.me/FlirtUa_bot"
-               class="inline-flex items-center justify-center gap-3 bg-emerald-500 hover:bg-emerald-600 transition-all px-10 py-4 rounded-2xl text-xl font-semibold shadow-lg shadow-emerald-500/30">
-                <i class="fa-brands fa-telegram text-2xl"></i>
-                <span>Відкрити бота в Telegram</span>
-            </a>
-           
-            <p class="mt-4 text-sm text-slate-400">Безкоштовно • Без реєстрації на сайті</p>
-        </div>
+<body>
+<div class="orn top" aria-hidden="true"></div>
+<div class="wrap">
+  <nav><div class="brand"><i aria-hidden="true"></i><span>Flirt<b>UA</b></span></div><a class="cta sm" href="https://t.me/FlirtUa_bot">Відкрити в Telegram</a></nav>
+  <header class="hero">
+    <div>
+      <h1>Наші поруч.</h1>
+      <p>Знайомства й дружба для українців, які живуть за кордоном. Українською, просто в Telegram, безкоштовно.</p>
+      <a class="cta" href="https://t.me/FlirtUa_bot"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.9 4.6 18.7 19.4c-.2 1-.9 1.3-1.7.8l-4.8-3.6-2.3 2.2c-.3.3-.5.5-1 .5l.3-4.9 8.9-8c.4-.3-.1-.5-.6-.2L6.5 13.1 1.8 11.6c-1-.3-1-1 .2-1.5L20.5 3c.9-.3 1.6.2 1.4 1.6z"/></svg>Почати знайомства</a>
+      <ul class="flags"><li><i class="flag es"></i>Іспанія</li><li><i class="flag pl"></i>Польща</li><li><i class="flag de"></i>Німеччина</li><li><i class="flag cz"></i>Чехія</li><li><i class="flag it"></i>Італія</li></ul>
     </div>
-    <!-- Переваги -->
-    <div class="max-w-5xl mx-auto px-6 py-16">
-        <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold">Чому саме ми?</h2>
-            <p class="text-slate-400 mt-2">Коротко про головні переваги</p>
-        </div>
-        <div class="grid md:grid-cols-3 gap-6">
-            <!-- Перевага 1 -->
-            <div class="bg-slate-900 border border-slate-800 rounded-3xl p-8">
-                <div class="w-12 h-12 bg-emerald-500/10 text-emerald-400 rounded-2xl flex items-center justify-center mb-6">
-                    <i class="fa-solid fa-users text-2xl"></i>
-                </div>
-                <h3 class="text-xl font-semibold mb-3">Спеціально для українців</h3>
-                <p class="text-slate-400">Бот створений саме для нашої спільноти за кордоном. Немає зайвого контенту та іноземців.</p>
-            </div>
-            <!-- Перевага 2 -->
-            <div class="bg-slate-900 border border-slate-800 rounded-3xl p-8">
-                <div class="w-12 h-12 bg-emerald-500/10 text-emerald-400 rounded-2xl flex items-center justify-center mb-6">
-                    <i class="fa-solid fa-location-dot text-2xl"></i>
-                </div>
-                <h3 class="text-xl font-semibold mb-3">Сортування за відстанню</h3>
-                <p class="text-slate-400">Бачите найближчих людей першими. Працює навіть якщо ви не вказали локацію.</p>
-            </div>
-            <!-- Перевага 3 -->
-            <div class="bg-slate-900 border border-slate-800 rounded-3xl p-8">
-                <div class="w-12 h-12 bg-emerald-500/10 text-emerald-400 rounded-2xl flex items-center justify-center mb-6">
-                    <i class="fa-solid fa-gift text-2xl"></i>
-                </div>
-                <h3 class="text-xl font-semibold mb-3">Преміум — дуже просто</h3>
-                <p class="text-slate-400">Щоб побачити, хто вас лайкнув, достатньо запросити одного друга за посиланням.</p>
-            </div>
-        </div>
-    </div>
-    <!-- Фінальний CTA -->
-    <div class="bg-slate-900 border-t border-slate-800 py-16">
-        <div class="max-w-xl mx-auto text-center px-6">
-            <h2 class="text-3xl font-bold mb-4">Готовий почати знайомства?</h2>
-            <p class="text-slate-400 mb-8">Приєднуйся до бота — це займе менше хвилини.</p>
-           
-            <a href="https://t.me/FlirtUa_bot"
-               class="inline-flex items-center justify-center gap-3 bg-white text-slate-950 hover:bg-slate-100 transition-all px-10 py-4 rounded-2xl text-xl font-semibold">
-                <i class="fa-brands fa-telegram text-2xl"></i>
-                <span>Почати в Telegram</span>
-            </a>
-        </div>
-    </div>
-    <footer class="text-center py-8 text-sm text-slate-500">
-        © 2026 • Бот знайомств для українців за кордоном
-    </footer>
-    <script>
-        // Tailwind script (опціонально)
-        function initializeTailwind() {
-            // Можна додати інтерактив, якщо потрібно
-        }
-        window.onload = initializeTailwind;
-    </script>
+    <div class="art"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 300" class="couple" role="img" aria-label="Закохана пара українців дивиться на вечірнє місто за кордоном">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1B3375"/><stop offset=".7" stop-color="#2C4C96"/><stop offset="1" stop-color="#E9A65A"/></linearGradient>
+    <radialGradient id="sun" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#FFE38A"/><stop offset=".6" stop-color="#F3C443"/><stop offset="1" stop-color="#F3C443" stop-opacity="0"/></radialGradient>
+    <linearGradient id="hill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#132656"/><stop offset="1" stop-color="#0E1E45"/></linearGradient>
+    <pattern id="vysh" width="8" height="8" patternUnits="userSpaceOnUse"><rect width="8" height="8" fill="#F5EEE2"/><path d="M4 1l3 3-3 3-3-3z" fill="#E2394B"/><rect x="3.4" y="3.4" width="1.2" height="1.2" fill="#0E1E45"/></pattern>
+    <clipPath id="frame"><rect width="360" height="300" rx="28"/></clipPath>
+  </defs>
+  <g clip-path="url(#frame)">
+    <rect width="360" height="300" fill="url(#sky)"/>
+    <g class="stars" fill="#F5EEE2"><circle cx="40" cy="36" r="1.4"/><circle cx="92" cy="22" r="1"/><circle cx="300" cy="30" r="1.5"/><circle cx="330" cy="70" r="1"/><circle cx="250" cy="18" r="1"/><circle cx="20" cy="90" r="1"/><circle cx="140" cy="50" r="1.1"/></g>
+    <circle class="sun" cx="180" cy="190" r="92" fill="url(#sun)" opacity=".9"/>
+    <circle cx="180" cy="190" r="44" fill="#FFD866"/>
+    <!-- місто за кордоном: дахи, вежа, купол, пальми -->
+    <g fill="#24407F">
+      <path d="M0 214h28v-26l14-12 14 12v26h20v-40h22v40h14v-58l9-14 9 14v58h18v-30h26v30h10v-48a20 20 0 0 1 40 0v48h12v-36h30v36h18v-22l12-10 12 10v22h50v90H0z"/>
+    </g>
+    <g fill="#F3C443" opacity=".85" class="win"><rect x="80" y="182" width="4" height="5"/><rect x="88" y="196" width="4" height="5"/><rect x="128" y="176" width="3" height="5"/><rect x="128" y="196" width="3" height="5"/><rect x="262" y="194" width="4" height="5"/><rect x="274" y="184" width="4" height="5"/><rect x="40" y="198" width="4" height="5"/></g>
+    <g fill="#1B3370"><path d="M330 214c-1-18 2-30 6-40-8 4-16 2-22-2 8-2 14-5 20-9-8-3-14-8-17-14 9 3 16 6 21 11 1-8 5-15 11-19-2 8-2 16 0 23 6-3 13-3 19 0-8 1-14 4-18 9 7 2 12 7 14 13-7-4-13-5-19-4-3 10-4 21-3 32z"/></g>
+    <path d="M0 238c60-18 120-22 180-18s120 12 180 0v80H0z" fill="url(#hill)"/>
+    <!-- пара зі спини -->
+    <g class="pair-fig">
+      <!-- він -->
+      <g transform="translate(150 152)">
+        <path d="M-26 92c0-40 6-66 26-66s26 26 26 66z" fill="url(#vysh)"/>
+        <path d="M-26 92c0-40 6-66 26-66s26 26 26 66z" fill="#F5EEE2" opacity=".55"/>
+        <rect x="-26" y="80" width="52" height="7" fill="#E2394B"/><rect x="-26" y="83" width="52" height="1.5" fill="#0E1E45"/>
+        <rect x="-18" y="92" width="14" height="40" rx="5" fill="#1E3570"/><rect x="4" y="92" width="14" height="40" rx="5" fill="#1E3570"/>
+        <rect x="-6" y="18" width="12" height="12" fill="#D9A27E"/>
+        <circle cx="-16" cy="10" r="3.5" fill="#E8B48F"/><circle cx="16" cy="10" r="3.5" fill="#E8B48F"/>
+        <circle cx="0" cy="7" r="16" fill="#4A2C1E"/>
+        <path d="M-14 14c4 4 9 6 14 6s10-2 14-6v4c-4 4-9 6-14 6s-10-2-14-6z" fill="#3A2216"/>
+      </g>
+      <!-- вона -->
+      <g transform="translate(206 158)">
+        <path d="M-24 86c0-36 6-60 24-60s24 24 24 60z" fill="url(#vysh)"/>
+        <path d="M-30 126l8-44h44l8 44z" fill="#E2394B"/>
+        <path d="M-30 126l8-44h44l8 44z" fill="#B71E33" opacity=".35"/>
+        <rect x="-5" y="16" width="10" height="12" fill="#D9A27E"/>
+        <path d="M-15 8c0-14 7-22 15-22s15 8 15 22l-2 30c-4 2-9 2-13 0s-9-2-13 0z" fill="#8A5A2B"/>
+        <path d="M-3 20c-1 14 0 30 3 44 3-14 4-30 3-44z" fill="#7A4C22"/>
+        <!-- вінок -->
+        <g class="vinok"><circle cx="-13" cy="-6" r="4.5" fill="#E2394B"/><circle cx="-6" cy="-12" r="4.5" fill="#F3C443"/><circle cx="2" cy="-14" r="4.5" fill="#E2394B"/><circle cx="10" cy="-11" r="4.5" fill="#5FB3FF"/><circle cx="15" cy="-4" r="4.5" fill="#F3C443"/><circle cx="-2" cy="-17" r="2" fill="#3FA65F"/><circle cx="12" cy="-16" r="2" fill="#3FA65F"/></g>
+        <!-- стрічки синя й жовта -->
+        <path class="rib1" d="M8 -6c4 20 2 44 8 64" stroke="#0057B7" stroke-width="4" fill="none" stroke-linecap="round"/>
+        <path class="rib2" d="M13 -4c6 20 6 40 14 58" stroke="#FFD500" stroke-width="4" fill="none" stroke-linecap="round"/>
+      </g>
+      <!-- руки тримаються -->
+      <path d="M172 210c6 6 12 8 16 6" stroke="#E8B48F" stroke-width="8" stroke-linecap="round" fill="none"/>
+    </g>
+    <!-- серце над парою -->
+    <g class="float-heart" transform="translate(180 120)"><path d="M0 14S-16 4-16-6c0-6 5-10 10-10 3 0 5 2 6 4 1-2 3-4 6-4 5 0 10 4 10 10C16 4 0 14 0 14z" fill="#E2394B"/></g>
+  </g>
+</svg></div>
+  </header>
+
+  <section class="reasons" id="why">
+    <h2>20 причин обрати FlirtUA</h2>
+    <p class="sub">Звичайні додатки знайомств зроблені для всіх. FlirtUA — для наших: тих, хто будує життя за кордоном і хоче поруч своїх людей.</p>
+    <div class="groups"><section class="grp"><h3><span aria-hidden="true">🇺🇦</span>Для наших</h3><ul><li><i aria-hidden="true">🌍</i><div><b>Створено для українців за кордоном</b><span>Іспанія, Польща, Німеччина, Чехія, Італія — тут лише ті, хто живе поруч, а не всі підряд.</span></div></li><li><i aria-hidden="true">💬</i><div><b>Українською з першого слова</b><span>Не треба переходити на англійську чи місцеву мову, щоб познайомитися.</span></div></li><li><i aria-hidden="true">🤝</i><div><b>Земляки першими</b><span>Люди з твого Львова, Харкова чи Одеси — вище в стрічці й з позначкою.</span></div></li><li><i aria-hidden="true">🧭</i><div><b>Видно, звідки людина</b><span>На анкеті маршрут: «Львів → Валенсія». Спільне — ще до першого повідомлення.</span></div></li><li><i aria-hidden="true">📍</i><div><b>Люди поруч</b><span>Анкети за відстанню: твоє місто, твій район.</span></div></li></ul></section><section class="grp"><h3><span aria-hidden="true">☕️</span>Знайомство без зайвого</h3><ul><li><i aria-hidden="true">☕️</i><div><b>«Вільний сьогодні»</b><span>Позначка на 24 години — кава після роботи без тижнів переписки.</span></div></li><li><i aria-hidden="true">💞</i><div><b>Пара або дружба — на вибір</b><span>Окремі стрічки: ті, хто шукає друзів, не змішуються з тими, хто шукає кохання.</span></div></li><li><i aria-hidden="true">👭</i><div><b>Дружба по-чесному</b><span>Шукаєш подругу — бачиш дівчат, які теж шукають подругу.</span></div></li><li><i aria-hidden="true">💌</i><div><b>Суперлайк з повідомленням</b><span>Раз на добу — напиши одразу, щоб тебе помітили першим.</span></div></li><li><i aria-hidden="true">⚡️</i><div><b>Взаємно — і одразу пишеш</b><span>Після симпатії кнопка «Написати» відкриває чат у Telegram.</span></div></li></ul></section><section class="grp"><h3><span aria-hidden="true">📱</span>Просто й зручно</h3><ul><li><i aria-hidden="true">📱</i><div><b>Просто в Telegram</b><span>Нічого не встановлювати — ні пошти, ні паролів.</span></div></li><li><i aria-hidden="true">⏱</i><div><b>Анкета за хвилину</b><span>Кілька коротких кроків, до 3 фото чи відео.</span></div></li><li><i aria-hidden="true">🔔</i><div><b>Не пропустиш симпатію</b><span>Сповіщення про лайки й взаємність — у Telegram, нагадування вдень, а не вночі.</span></div></li><li><i aria-hidden="true">🎁</i><div><b>Безкоштовно</b><span>Анкети, лайки, взаємні симпатії й листування — без оплати.</span></div></li><li><i aria-hidden="true">💶</i><div><b>Чесна ціна Преміуму</b><span>Тиждень ≈5 € зірками Telegram — без картки й сторонніх сайтів. Або безкоштовно за запрошеного друга.</span></div></li></ul></section><section class="grp"><h3><span aria-hidden="true">🛡</span>Безпечно</h3><ul><li><i aria-hidden="true">🔞</i><div><b>Лише 18+</b><span>Тільки дорослі.</span></div></li><li><i aria-hidden="true">🚨</i><div><b>Скарги перевіряє людина</b><span>Фейки, спам і образи — одна кнопка; після кількох скарг анкета ховається автоматично.</span></div></li><li><i aria-hidden="true">🔒</i><div><b>Приватність</b><span>Іншим видно лише відстань у км, не адресу.</span></div></li><li><i aria-hidden="true">⏸</i><div><b>Пауза будь-коли</b><span>Сховай анкету на час — лайки й симпатії збережуться. Або видали назавжди.</span></div></li><li><i aria-hidden="true">🙋</i><div><b>Жива підтримка</b><span>Пишеш у «Підтримку» прямо в застосунку — відповідає людина.</span></div></li></ul></section></div>
+  </section>
+
+  <section class="final">
+    <div class="orn" style="max-width:220px;margin:0 auto 26px" aria-hidden="true"></div>
+    <h2>Свої — поруч.</h2>
+    <p>Анкета займе хвилину. Без пошти, паролів і нових додатків — просто відкрий бота в Telegram.</p>
+    <a class="cta" href="https://t.me/FlirtUa_bot">Відкрити FlirtUA</a>
+    <p class="note">Безкоштовно · лише 18+</p>
+  </section>
+</div>
+<footer>© 2026 FlirtUA · знайомства для українців за кордоном</footer>
+<script>
+// вишиванка: піксельний орнамент «хрестиком»
+(function () {
+  function svg(rows, cell, gap) {
+    var col = { r: "#E2394B", g: "#F3C443" }, rects = "";
+    rows.forEach(function (row, y) { row.split("").forEach(function (ch, x) { if (col[ch]) rects += '<rect x="' + (x * cell + gap / 2) + '" y="' + (y * cell + gap / 2) + '" width="' + (cell - gap) + '" height="' + (cell - gap) + '" fill="' + col[ch] + '"/>'; }); });
+    var w = rows[0].length * cell, h = rows.length * cell;
+    return 'url("data:image/svg+xml,' + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ' + w + ' ' + h + '" width="' + w + '" height="' + h + '" shape-rendering="crispEdges">' + rects + '</svg>') + '")';
+  }
+  var rows = [];
+  for (var y = 0; y < 9; y++) { var r = "", d = Math.abs(y - 4);
+    for (var x = 0; x < 18; x++) { var dx = Math.abs(x - 4), sx = Math.abs(x - 13);
+      r += (dx + d === 4) ? "r" : (dx + d === 2) ? "g" : (dx === 0 && d === 0) ? "r" : (sx + d === 2 && d <= 2) ? "g" : "."; }
+    rows.push(r); }
+  var st = document.documentElement.style;
+  st.setProperty("--stitch", svg(rows, 2, .35));
+  st.setProperty("--heart", svg([".rr.rr.", "rrrrrrr", "rrgrrrr", ".rrrrr.", "..rrr..", "...r..."], 2, .3));
+})();
+</script>
 </body>
 </html>
